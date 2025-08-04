@@ -1,0 +1,18 @@
+require('dotenv').config();
+const express = require('express');
+const connectToDB = require('./database/db');
+const productRoutes = require('./routes/product-routes');
+const  app = express();
+const PORT = process.env.PORT || 3000;
+//connect to out database:
+connectToDB();
+
+// middleware -> to parse the request body: express.json()
+app.use(express.json());
+// routes here:
+app.use('/api/products', productRoutes); //👈🏽
+
+app.use(express.json());
+app.listen(PORT, () => {
+  console.log(`Server is NOW running on port ${PORT}`);
+})

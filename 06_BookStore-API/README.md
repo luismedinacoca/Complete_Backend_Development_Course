@@ -33,7 +33,7 @@ npm i express mongoose dotenv
 # 7. Create Project structure folder as:
 ```
 06_BookStore-API/
-├── controllers/
+├── controllers/ 
 ├── database/
 │   └── db.js  
 ├── models/
@@ -190,7 +190,7 @@ app.listen(PORT, () => {
 ```
 
 # 15. Update each. callback from  `book-controller` file:
-
+## Sequence: addNewBook > getAllBooks > getSingleBookById > updateBook > deleteBook
 ## 15.1 Update `addNewBook` callback:
 ```js
 const addNewBook = async(req, res) => {
